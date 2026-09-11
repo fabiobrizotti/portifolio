@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -8,13 +8,17 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jet
 
 const baseUrl = "https://fabiobrizotti.vercel.app";
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#020617",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: {
-    default: "Fabio Brizotti | Desenvolvedor Full Stack & Especialista em IA",
-    template: "%s | Fabio Brizotti",
-  },
-  description: "Portfólio de Fabio Brizotti - Desenvolvedor Full Stack especializado em IA, automações e arquitetura de software de alta performance.",
+  title: "Fabio Brizotti | Dev Full Stack & Especialista em IA",
+  description: "Portfólio de Fabio Brizotti: Desenvolvedor Full Stack focado em Inteligência Artificial, automações e software moderno.",
   keywords: [
     "Fabio Brizotti",
     "Desenvolvedor Full Stack",
@@ -25,27 +29,31 @@ export const metadata: Metadata = {
     "React",
     "TypeScript",
     "Node.js",
+    "Python",
     "Automações",
-    "Portfólio",
   ],
   authors: [{ name: "Fabio Brizotti", url: baseUrl }],
   creator: "Fabio Brizotti",
   publisher: "Fabio Brizotti",
   alternates: {
-    canonical: "/",
+    canonical: baseUrl,
+    languages: {
+      "pt-BR": baseUrl,
+      "x-default": baseUrl,
+    },
   },
   openGraph: {
     type: "website",
     locale: "pt_BR",
     url: baseUrl,
-    title: "Fabio Brizotti | Desenvolvedor Full Stack & Especialista em IA",
-    description: "Portfólio de Fabio Brizotti - Desenvolvedor Full Stack especializado em IA, automações e arquitetura de software de alta performance.",
-    siteName: "Fabio Brizotti - Portfólio",
+    title: "Fabio Brizotti | Dev Full Stack & Especialista em IA",
+    description: "Portfólio de Fabio Brizotti: Desenvolvedor Full Stack focado em Inteligência Artificial, automações e software moderno.",
+    siteName: "Fabio Brizotti",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fabio Brizotti | Desenvolvedor Full Stack & Especialista em IA",
-    description: "Portfólio de Fabio Brizotti - Desenvolvedor Full Stack especializado em IA, automações e arquitetura de software de alta performance.",
+    title: "Fabio Brizotti | Dev Full Stack & Especialista em IA",
+    description: "Portfólio de Fabio Brizotti: Desenvolvedor Full Stack focado em Inteligência Artificial, automações e software moderno.",
   },
   robots: {
     index: true,
@@ -75,7 +83,7 @@ const jsonLd = {
       name: "Fabio Brizotti",
       url: baseUrl,
       jobTitle: "Desenvolvedor Full Stack & Especialista em IA",
-      description: "Desenvolvedor Full Stack especializado em Inteligência Artificial, automações e arquitetura de software.",
+      description: "Desenvolvedor Full Stack focado em Inteligência Artificial, automações e arquitetura de software moderno.",
       sameAs: [
         "https://github.com/fabiobrizotti",
         "https://linkedin.com/in/fabiobrizotti",
