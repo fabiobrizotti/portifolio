@@ -28,7 +28,11 @@ yarn-error.log*
 *.py
 *.log
 .claude/
+.claude
 .turbo
+
+# directorys and files
+specs.md
 
 # local env files
 .env*.local
