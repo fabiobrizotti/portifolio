@@ -1,96 +1,74 @@
 import React from "react";
-import { portfolioData } from "@/data/portfolioData";
-import { SectionHeading } from "./ui/SectionHeading";
-import { Card } from "./ui/Card";
-import { Badge } from "./ui/Badge";
-import { TrendingUp, Bot, Code2, Network } from "lucide-react";
+import { Server, Brain, Database, Terminal } from "lucide-react";
 
-export function Skills() {
-  const { skills } = portfolioData;
+interface SkillCategory {
+  title: string;
+  icon: React.ReactNode;
+  skills: string[];
+}
 
-  const categoryIcons = [
-    <TrendingUp key="0" className="w-5 h-5 text-ubuntu-orange" />,
-    <Bot key="1" className="w-5 h-5 text-purple-300" />,
-    <Code2 key="2" className="w-5 h-5 text-ubuntu-orangeLight" />,
-    <Network key="3" className="w-5 h-5 text-gray-300" />,
-  ];
+const categories: SkillCategory[] = [
+  {
+    title: "Engenharia & Backend",
+    icon: <Server className="w-4 h-4 text-zinc-400" />,
+    skills: ["Node.js", "TypeScript", "Python", "Docker", "RabbitMQ", "Redis", "REST APIs", "Microservices"],
+  },
+  {
+    title: "Inteligência Artificial & RAG",
+    icon: <Brain className="w-4 h-4 text-zinc-400" />,
+    skills: ["LLM Orchestration", "RAG Systems", "pgvector", "XML Guardrails", "n8n Automation", "Multimodal Agents"],
+  },
+  {
+    title: "Bancos de Dados & Dados",
+    icon: <Database className="w-4 h-4 text-zinc-400" />,
+    skills: ["PostgreSQL", "Vetores & Embeddings", "Modelagem Relacional", "Persistência Assíncrona"],
+  },
+  {
+    title: "Frontend & Infraestrutura",
+    icon: <Terminal className="w-4 h-4 text-zinc-400" />,
+    skills: ["Next.js (App Router)", "React", "Tailwind CSS", "Linux / Bash", "Git", "Vercel / Cloud Deploy"],
+  },
+];
 
-  const getLevelBadgeVariant = (level: string) => {
-    switch (level) {
-      case "Especialista":
-        return "orange";
-      case "Avançado":
-        return "aubergine";
-      default:
-        return "default";
-    }
-  };
-
+export const Skills = () => {
   return (
-    <section id="skills" className="py-20 md:py-28 relative border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          sectionNumber="4"
-          tag="MATRIZ DE COMPETÊNCIAS"
-          title="Competências Estratégicas &amp; Tecnológicas"
-          subtitle="Domínio integrado entre visão de negócios e produtos, automação com IA, desenvolvimento fullstack e gestão de infraestrutura."
-        />
+    <section className="py-14 border-t border-zinc-800/60">
+      <div className="space-y-8">
+        <div>
+          <h2 className="text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">
+            // 04. Habilidades
+          </h2>
+          <h3 className="text-xl font-medium text-white tracking-tight">
+            Competências Técnicas
+          </h3>
+        </div>
 
-        {/* 4.1, 4.2, 4.3, 4.4 Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {skills.map((category, idx) => (
-            <Card
-              key={idx}
-              accentColor={idx % 2 === 0 ? "orange" : "aubergine"}
-              className="p-6 sm:p-7"
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {categories.map((cat, i) => (
+            <div
+              key={i}
+              className="p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/80 space-y-3"
             >
-              {/* Category Header with NBR 6024 Numbering */}
-              <div className="flex items-center gap-3.5 mb-6 pb-4 border-b border-white/10">
-                <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center flex-shrink-0">
-                  {categoryIcons[idx % categoryIcons.length]}
-                </div>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono font-bold text-ubuntu-orange">
-                      4.{idx + 1}
-                    </span>
-                    <h3 className="text-base sm:text-lg font-bold text-white">
-                      {category.title}
-                    </h3>
-                  </div>
-                  <span className="text-[11px] font-mono text-gray-400 mt-0.5 block">
-                    {category.skills.length} COMPETÊNCIAS CONSOLIDADAS
-                  </span>
-                </div>
+              <div className="flex items-center gap-2">
+                {cat.icon}
+                <h4 className="text-sm font-medium text-zinc-200">
+                  {cat.title}
+                </h4>
               </div>
-
-              {/* Skills List */}
-              <div className="space-y-2.5">
-                {category.skills.map((skill, sIdx) => (
-                  <div
-                    key={sIdx}
-                    className="flex items-center justify-between p-2.5 rounded-lg bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 transition-colors"
+              <div className="flex flex-wrap gap-1.5 pt-1">
+                {cat.skills.map((skill, si) => (
+                  <span
+                    key={si}
+                    className="px-2.5 py-0.5 rounded-md text-[11px] font-mono bg-zinc-800/60 border border-zinc-700/40 text-zinc-300"
                   >
-                    <div className="flex items-center gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-ubuntu-orange" />
-                      <span className="text-sm text-gray-200 font-medium">
-                        {skill.name}
-                      </span>
-                    </div>
-
-                    <Badge
-                      variant={getLevelBadgeVariant(skill.level)}
-                      size="sm"
-                    >
-                      {skill.level}
-                    </Badge>
-                  </div>
+                    {skill}
+                  </span>
                 ))}
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </div>
     </section>
   );
-}
+};
