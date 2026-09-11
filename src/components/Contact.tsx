@@ -86,6 +86,16 @@ export const Contact = () => {
           </div>
         </div>
 
+        
+        <nav aria-label="Navegação secundária" className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400 mb-8 border-t border-slate-800/80 pt-8">
+          <a href="#inicio" className="hover:text-cyan-400 transition-colors">Início</a>
+          <a href="#sobre" className="hover:text-cyan-400 transition-colors">Trajetória</a>
+          <a href="#experiencia" className="hover:text-cyan-400 transition-colors">Carreira</a>
+          <a href="#projetos" className="hover:text-cyan-400 transition-colors">Projetos</a>
+          <a href="#habilidades" className="hover:text-cyan-400 transition-colors">Habilidades</a>
+          <a href="#contato" className="hover:text-cyan-400 transition-colors">Contato</a>
+        </nav>
+
         <footer className="pt-8 pb-12 text-center text-xs text-zinc-500 font-mono">
           <p>© {new Date().getFullYear()} Fabio Brizotti. Construído com Next.js & Tailwind CSS.</p>
         </footer>

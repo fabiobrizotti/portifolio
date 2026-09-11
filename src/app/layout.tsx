@@ -17,7 +17,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: "Fabio Brizotti | Dev Full Stack & Especialista em IA",
+  title: "Fabio Brizotti | Desenvolvedor Full Stack & IA",
   description: "Portfólio de Fabio Brizotti: Desenvolvedor Full Stack focado em Inteligência Artificial, automações e software moderno.",
   keywords: [
     "Fabio Brizotti",
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: baseUrl,
-    title: "Fabio Brizotti | Dev Full Stack & Especialista em IA",
+    title: "Fabio Brizotti | Desenvolvedor Full Stack & IA",
     description: "Portfólio de Fabio Brizotti: Desenvolvedor Full Stack focado em Inteligência Artificial, automações e software moderno.",
     siteName: "Fabio Brizotti",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fabio Brizotti | Dev Full Stack & Especialista em IA",
+    title: "Fabio Brizotti | Desenvolvedor Full Stack & IA",
     description: "Portfólio de Fabio Brizotti: Desenvolvedor Full Stack focado em Inteligência Artificial, automações e software moderno.",
   },
   robots: {
