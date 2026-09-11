@@ -84,7 +84,7 @@ export const portfolioData: PortfolioData = {
       "Em 2024, fundei a B&B Doceria e a gerenciei durante 9 meses. Nessa vivência prática — controlando estoque, calculando marcação de preços e atendendo clientes pelo WhatsApp — identifiquei um gargalo operacional crítico: o tempo gasto com atendimento manual competia diretamente com a produção.",
       "A partir desse diagnóstico, projetei e desenvolvi a Anne IA: uma arquitetura completa de microsserviços em Docker, integrando n8n, RabbitMQ, Redis, PostgreSQL com pgvector e Gemini. A solução eliminou o gargalo de atendimento com mensageria assíncrona, inteligência multimodal e conformidade com a LGPD.",
     ],
-    email: "fabiobrizotti@gmail.com",
+    email: "fabio.brizottilab@gmail.com",
     location: "Tietê, SP · Brasil",
     academic: {
       technical: "Técnico em Desenvolvimento de Sistemas",
