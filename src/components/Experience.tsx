@@ -12,18 +12,18 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
   {
     period: "2026 — Presente",
-    role: "Aluno Monitor",
+    role: "Aluno monitor",
     company: "Programa BEEM",
     description:
-      "Suporte técnico especializado em laboratórios de informática e infraestrutura de redes. Orientação a estudantes e professores na resolução de problemas cotidianos de TI e boas práticas digitais.",
+      "Suporte técnico em laboratórios de informática e redes. Orientação a estudantes e professores no dia a dia de TI.",
     tags: ["Suporte Técnico", "Redes", "Hardware & Labs", "Atendimento"],
   },
   {
     period: "2025",
-    role: "Desenvolvedor Autônomo & Ex-Fundador",
+    role: "Desenvolvedor autônomo & ex-fundador",
     company: "B&B Doceria",
     description:
-      "Gestão de operação e comércio durante 9 meses. Criação de rotinas e ferramentas de automação para controle de estoque, formação de preços e atendimento a clientes via canais digitais.",
+      "Gestão de operação e comércio durante 9 meses. Controle de estoque, precificação por markup e atendimento pelo WhatsApp. Essa vivência gerou os requisitos da Anne IA.",
     tags: ["Gestão de Negócio", "Automações", "Operações", "Arquitetura de Soluções"],
   },
 ];
@@ -37,7 +37,7 @@ export const Experience = () => {
             // 02. Carreira
           </h2>
           <h3 className="text-xl font-medium text-white tracking-tight">
-            Experiência Profissional
+            Experiência
           </h3>
         </div>
 

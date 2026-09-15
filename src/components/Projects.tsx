@@ -31,7 +31,7 @@ export const Projects = () => {
 
           {/* Description & Objective */}
           <p className="text-sm text-zinc-300 leading-relaxed">
-            Arquitetura de microsserviços e Inteligência Artificial multimodal projetada para automação resiliente de atendimento via WhatsApp, fornecendo a micro e pequenos negócios um ecossistema conversacional escalável, seguro e de baixo custo operacional.
+            Plataforma self-hosted que automatiza o atendimento comercial no WhatsApp usando IA multimodal. Nasceu da necessidade real da B&B Doceria e hoje roda com 5 microsserviços em Docker.
           </p>
 
           {/* 4 Architectural Pillars Grid */}
@@ -45,7 +45,7 @@ export const Projects = () => {
                 </h5>
               </div>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Arquitetura self-hosted baseada no ecossistema n8n (fair-code) e contêineres Docker, eliminando dependência de fornecedores (Vendor Lock-in) e viabilizando custos acessíveis.
+                Tudo roda em Docker com n8n self-hosted. Sem depender de serviços externos.
               </p>
             </div>
 
@@ -58,7 +58,7 @@ export const Projects = () => {
                 </h5>
               </div>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Mensageria assíncrona com RabbitMQ e agrupamento de sessões com Redis. Garante persistência de dados e zero perda de mensagens durante picos sazonais de alta demanda.
+                RabbitMQ e Redis garantem que nenhuma mensagem se perca, mesmo com muitos acessos ao mesmo tempo.
               </p>
             </div>
 
@@ -71,7 +71,7 @@ export const Projects = () => {
                 </h5>
               </div>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Encapsulamento com matrizes XML de segurança contra Prompt Injection, além de RAG com PostgreSQL + pgvector para validação de catálogo e contexto institucional real.
+                Guardrails em XML bloqueiam Prompt Injection. O RAG com pgvector garante respostas baseadas no catálogo real do negócio.
               </p>
             </div>
 
@@ -84,7 +84,7 @@ export const Projects = () => {
                 </h5>
               </div>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Zera tempo de espera no WhatsApp com suporte multimodal e coleta seletiva, além de Garbage Collector cíclico para conformidade estrita com a LGPD.
+                Responde áudio, imagem e texto direto no WhatsApp. Um mecanismo de limpeza automática descarta dados a cada 24h, em conformidade com a LGPD.
               </p>
             </div>
           </div>

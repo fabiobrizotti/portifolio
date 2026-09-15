@@ -19,7 +19,7 @@ export const Hero = () => {
             Fabio Brizotti
           </h1>
           <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl leading-relaxed font-normal">
-            Engenharia de software focada em arquiteturas distribuídas, resiliência operacional e sistemas autônomos de Inteligência Artificial.
+            Sistemas web, automações e integrações de IA focados na operação real de empresas.
           </p>
         </div>
 

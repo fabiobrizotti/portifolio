@@ -16,7 +16,7 @@ export const Contact = () => {
 
         <div className="p-6 sm:p-8 rounded-2xl bg-zinc-900/40 border border-zinc-800/80 space-y-6">
           <p className="text-sm text-zinc-300 leading-relaxed max-w-xl">
-            Aberto para novas oportunidades, colaborações em projetos de arquitetura de software, automação inteligente e discussões técnicas sobre IA.
+            Aberto para projetos de automação, sistemas com IA e qualquer conversa técnica sobre software.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -88,12 +88,10 @@ export const Contact = () => {
 
         
         <nav aria-label="Navegação secundária" className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400 mb-8 border-t border-slate-800/80 pt-8">
-          <a href="#inicio" className="hover:text-cyan-400 transition-colors">Início</a>
-          <a href="#sobre" className="hover:text-cyan-400 transition-colors">Trajetória</a>
-          <a href="#experiencia" className="hover:text-cyan-400 transition-colors">Carreira</a>
-          <a href="#projetos" className="hover:text-cyan-400 transition-colors">Projetos</a>
-          <a href="#habilidades" className="hover:text-cyan-400 transition-colors">Habilidades</a>
-          <a href="#contato" className="hover:text-cyan-400 transition-colors">Contato</a>
+          <a href="#sobre" className="hover:text-[#FF5500] transition-colors">Sobre</a>
+          <a href="#experiencia" className="hover:text-[#FF5500] transition-colors">Experiência</a>
+          <a href="#projetos" className="hover:text-[#FF5500] transition-colors">Projetos</a>
+          <a href="#contato" className="hover:text-[#FF5500] transition-colors">Contato</a>
         </nav>
 
         <footer className="pt-8 pb-12 text-center text-xs text-zinc-500 font-mono">

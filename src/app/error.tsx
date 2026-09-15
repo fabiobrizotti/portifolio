@@ -38,7 +38,7 @@ export default function Error({
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-ubuntu-orange hover:bg-ubuntu-orangeLight text-white text-xs font-mono font-semibold transition-all shadow-ubuntu-orange"
           >
             <RefreshCw className="w-3.5 h-3.5" />
-            <span>Tentar Novamente</span>
+            <span>Tentar novamente</span>
           </button>
 
           <Link
