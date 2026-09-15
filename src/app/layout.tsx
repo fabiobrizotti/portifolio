@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -129,6 +130,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased bg-slate-950 text-slate-100 min-h-screen">
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
