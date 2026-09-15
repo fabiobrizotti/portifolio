@@ -119,7 +119,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
+    <html lang="pt-BR" suppressHydrationWarning className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <head>
         <meta name="google-site-verification" content="zgtuckQnwXfJg3u7HpQdnOFRKnPWvJKI-EZaGwkDPac" />
         <meta name="google-site-verification" content="R8CwfbhssxGCNOdX9iQN2Wkcn-lKtRKjZIDgA1qH2GM" />
