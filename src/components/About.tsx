@@ -10,7 +10,7 @@ export const About = () => {
             // 01. Trajetória
           </h2>
           <h3 className="text-xl font-medium text-white tracking-tight">
-            Sobre Mim
+            Sobre mim
           </h3>
         </div>
 
@@ -24,7 +24,7 @@ export const About = () => {
               Início Precoce & Curiosidade
             </h4>
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-              Minha jornada na tecnologia começou cedo. Movido pela curiosidade, aprendi a mexer em scripts para games e a desbloquear o sistema Android com apenas 7 anos de idade em um tablet, descobrindo na prática a autonomia de modificar sistemas.
+              Aos 7 anos, mexi em scripts de games e desbloqueei um Android sozinho. Foi aí que entendi que dava pra modificar sistemas.
             </p>
           </div>
 
@@ -37,7 +37,7 @@ export const About = () => {
               B&B Doceria (2025)
             </h4>
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-              Fundei a B&B Doceria e a gerenciei durante 9 meses. Nessa vivência prática — controlando estoque, calculando marcação de preços e atendendo clientes pelo WhatsApp — identifiquei um gargalo operacional crítico: o tempo gasto com atendimento manual competia diretamente com a produção.
+              Fundei a B&B Doceria e a gerenciei durante 9 meses. Nessa vivência prática, controlando estoque, calculando marcação de preços e atendendo clientes pelo WhatsApp, identifiquei um gargalo operacional crítico: o tempo gasto com atendimento manual competia diretamente com a produção.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export const About = () => {
               Engenharia Orientada a Problemas Reais
             </h4>
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-              A partir do primeiro problema real de negócios, aprofundei-me na arquitetura de sistemas distribuídos e de Inteligência Artificial para construir ferramentas capazes de solucionar desafios concretos com confiabilidade e autonomia.
+              A B&B Doceria foi o ponto de partida. A partir daí, comecei a estudar arquitetura de sistemas e IA para resolver problemas reais de negócio.
             </p>
           </div>
         </div>

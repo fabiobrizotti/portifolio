@@ -17,11 +17,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: "Fabio Brizotti | Desenvolvedor Full Stack & IA",
-  description: "Portfólio de Fabio Brizotti: Desenvolvedor Full Stack focado em Inteligência Artificial, automações e software moderno.",
+  title: "Fabio Brizotti | Desenvolvedor Autônomo & IA",
+  description: "Portfólio de Fabio Brizotti: Desenvolvedor Autônomo focado em automações, IA e sistemas web.",
   keywords: [
     "Fabio Brizotti",
-    "Desenvolvedor Full Stack",
+    "Desenvolvedor Autônomo",
     "Especialista em IA",
     "Engenheiro de Software",
     "Inteligência Artificial",
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: baseUrl,
-    title: "Fabio Brizotti | Desenvolvedor Full Stack & IA",
-    description: "Portfólio de Fabio Brizotti: Desenvolvedor Full Stack focado em Inteligência Artificial, automações e software moderno.",
+    title: "Fabio Brizotti | Desenvolvedor Autônomo & IA",
+    description: "Portfólio de Fabio Brizotti: Desenvolvedor Autônomo focado em automações, IA e sistemas web.",
     siteName: "Fabio Brizotti",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fabio Brizotti | Desenvolvedor Full Stack & IA",
-    description: "Portfólio de Fabio Brizotti: Desenvolvedor Full Stack focado em Inteligência Artificial, automações e software moderno.",
+    title: "Fabio Brizotti | Desenvolvedor Autônomo & IA",
+    description: "Portfólio de Fabio Brizotti: Desenvolvedor Autônomo focado em automações, IA e sistemas web.",
   },
   robots: {
     index: true,
@@ -82,14 +82,14 @@ const jsonLd = {
       "@id": `${baseUrl}/#person`,
       name: "Fabio Brizotti",
       url: baseUrl,
-      jobTitle: "Desenvolvedor Full Stack & Especialista em IA",
-      description: "Desenvolvedor Full Stack focado em Inteligência Artificial, automações e arquitetura de software moderno.",
+      jobTitle: "Desenvolvedor Autônomo & IA",
+      description: "Desenvolvedor Autônomo focado em automações, IA e sistemas web.",
       sameAs: [
         "https://github.com/fabiobrizotti",
         "https://linkedin.com/in/fabiobrizotti",
       ],
       knowsAbout: [
-        "Full Stack Development",
+        "Autonomous Software Development",
         "Artificial Intelligence",
         "Next.js",
         "React",

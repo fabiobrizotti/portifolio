@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Fabio Brizotti | Desenvolvedor Full Stack & IA";
+export const alt = "Fabio Brizotti | Desenvolvedor Autônomo & IA";
 export const size = {
   width: 1200,
   height: 630,
@@ -55,7 +55,7 @@ export default async function Image() {
             lineHeight: 1.4,
           }}
         >
-          Desenvolvedor Full Stack &amp; Especialista em Inteligência Artificial
+          Desenvolvedor Autônomo &amp; Especialista em IA
         </div>
         <div
           style={{
