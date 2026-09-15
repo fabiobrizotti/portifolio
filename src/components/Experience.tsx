@@ -33,7 +33,7 @@ export const Experience = () => {
     <section id="experiencia" className="py-14 border-t border-zinc-800/60">
       <div className="space-y-8">
         <div>
-          <h2 className="text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">
+          <h2 className="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">
             // 02. Carreira
           </h2>
           <h3 className="text-xl font-medium text-white tracking-tight">
@@ -56,7 +56,7 @@ export const Experience = () => {
                     {exp.company}
                   </p>
                 </div>
-                <span className="text-xs font-mono text-zinc-500">
+                <span className="text-xs font-mono text-zinc-400">
                   {exp.period}
                 </span>
               </div>

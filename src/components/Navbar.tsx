@@ -31,7 +31,7 @@ export const Navbar = () => {
           {/* Subtle pixel status dot */}
           <span className="w-2 h-2 rounded-[1px] bg-emerald-500 inline-block shadow-[0_0_8px_rgba(16,185,129,0.4)]" />
           <span>fabiobrizotti</span>
-          <span className="text-xs text-zinc-500 font-mono">/dev</span>
+          <span className="text-xs text-zinc-400 font-mono">/dev</span>
         </Link>
 
         <nav className="hidden sm:flex items-center gap-6 text-xs font-medium text-zinc-400">
