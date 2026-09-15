@@ -6,7 +6,7 @@ export const Projects = () => {
     <section id="projetos" className="py-14 border-t border-zinc-800/60">
       <div className="space-y-8">
         <div>
-          <h2 className="text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">
+          <h2 className="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">
             // 03. Trabalho & Engenharia
           </h2>
           <h3 className="text-xl font-medium text-white tracking-tight">
@@ -91,7 +91,7 @@ export const Projects = () => {
 
           {/* Tech Stack Pills */}
           <div className="pt-2 border-t border-zinc-800/60 flex flex-wrap items-center gap-2">
-            <span className="text-xs text-zinc-500 font-mono mr-1">Stack:</span>
+            <span className="text-xs text-zinc-400 font-mono mr-1">Stack:</span>
             {[
               "Docker",
               "n8n Self-Hosted",

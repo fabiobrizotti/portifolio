@@ -6,7 +6,7 @@ export const Contact = () => {
     <section id="contato" className="py-14 border-t border-zinc-800/60">
       <div className="space-y-8">
         <div>
-          <h2 className="text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">
+          <h2 className="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">
             // 05. Conexão
           </h2>
           <h3 className="text-xl font-medium text-white tracking-tight">
@@ -94,7 +94,7 @@ export const Contact = () => {
           <a href="#contato" className="hover:text-[#FF5500] transition-colors duration-300 ease-in-out">Contato</a>
         </nav>
 
-        <footer className="pt-8 pb-12 text-center text-xs text-zinc-500 font-mono">
+        <footer className="pt-8 pb-12 text-center text-xs text-zinc-400 font-mono">
           <p>© {new Date().getFullYear()} Fabio Brizotti. Construído com Next.js & Tailwind CSS.</p>
         </footer>
       </div>

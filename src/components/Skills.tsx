@@ -35,7 +35,7 @@ export const Skills = () => {
     <section className="py-14 border-t border-zinc-800/60">
       <div className="space-y-8">
         <div>
-          <h2 className="text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">
+          <h2 className="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">
             // 04. Habilidades
           </h2>
           <h3 className="text-xl font-medium text-white tracking-tight">

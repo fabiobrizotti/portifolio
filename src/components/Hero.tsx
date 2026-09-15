@@ -9,7 +9,7 @@ export const Hero = () => {
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-zinc-900/90 border border-zinc-800 text-zinc-300 w-fit">
           <span className="w-1.5 h-1.5 rounded-[1px] bg-emerald-400 animate-pulse" />
           <span>Desenvolvedor Autônomo</span>
-          <span className="text-zinc-600">•</span>
+          <span className="text-zinc-400">•</span>
           <span className="text-zinc-400">Tietê - SP, Brasil</span>
         </div>
 
