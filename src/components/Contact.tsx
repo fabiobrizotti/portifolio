@@ -88,10 +88,10 @@ export const Contact = () => {
 
         
         <nav aria-label="Navegação secundária" className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400 mb-8 border-t border-slate-800/80 pt-8">
-          <a href="#sobre" className="hover:text-[#FF5500] transition-colors">Sobre</a>
-          <a href="#experiencia" className="hover:text-[#FF5500] transition-colors">Experiência</a>
-          <a href="#projetos" className="hover:text-[#FF5500] transition-colors">Projetos</a>
-          <a href="#contato" className="hover:text-[#FF5500] transition-colors">Contato</a>
+          <a href="#sobre" className="hover:text-[#FF5500] transition-colors duration-300 ease-in-out">Sobre</a>
+          <a href="#experiencia" className="hover:text-[#FF5500] transition-colors duration-300 ease-in-out">Experiência</a>
+          <a href="#projetos" className="hover:text-[#FF5500] transition-colors duration-300 ease-in-out">Projetos</a>
+          <a href="#contato" className="hover:text-[#FF5500] transition-colors duration-300 ease-in-out">Contato</a>
         </nav>
 
         <footer className="pt-8 pb-12 text-center text-xs text-zinc-500 font-mono">

@@ -18,24 +18,27 @@ export default function Error({
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 relative z-10">
-      <div className="max-w-md w-full text-center space-y-6 p-8 rounded-2xl bg-[#141622]/90 border border-white/10 shadow-2xl backdrop-blur-xl">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 font-mono text-xs font-bold">
-          RECUPERAÇÃO DE FALHA
+      <div className="w-full max-w-md text-center space-y-6 rounded-2xl bg-zinc-900/50 border border-zinc-800/80 p-10">
+        {/* Status pill, same style as the Hero badge */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-zinc-900/90 border border-zinc-800 text-zinc-300">
+          <span className="w-1.5 h-1.5 rounded-[1px] bg-[#FF5500] animate-pulse" />
+          <span>Recuperação de falha</span>
         </div>
 
-        <div className="space-y-2">
-          <h1 className="text-2xl font-extrabold text-white tracking-tight">
+        <div className="space-y-3">
+          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
             Algo inesperado aconteceu
           </h1>
-          <p className="text-xs text-gray-400 leading-relaxed">
-            O sistema isolou o erro para proteger sua navegação. Você pode tentar recarregar o componente ou retornar ao início.
+          <p className="text-sm text-zinc-400 leading-relaxed max-w-md mx-auto">
+            O sistema isolou o erro para proteger sua navegação. Você pode
+            recarregar o componente ou retornar ao início.
           </p>
         </div>
 
-        <div className="pt-2 flex items-center justify-center gap-3">
+        <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
           <button
             onClick={() => reset()}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-ubuntu-orange hover:bg-ubuntu-orangeLight text-white text-xs font-mono font-semibold transition-all shadow-ubuntu-orange"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium bg-white text-zinc-950 hover:bg-zinc-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5500] focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
           >
             <RefreshCw className="w-3.5 h-3.5" />
             <span>Tentar novamente</span>
@@ -43,10 +46,10 @@ export default function Error({
 
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white text-xs font-mono font-semibold transition-all"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5500] focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
           >
             <Home className="w-3.5 h-3.5" />
-            <span>Início</span>
+            <span>Retornar ao Início</span>
           </Link>
         </div>
       </div>

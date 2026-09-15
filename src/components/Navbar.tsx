@@ -35,16 +35,16 @@ export const Navbar = () => {
         </Link>
 
         <nav className="hidden sm:flex items-center gap-6 text-xs font-medium text-zinc-400">
-          <a href="#sobre" className="hover:text-zinc-100 transition-colors">
+          <a href="#sobre" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Sobre
           </a>
-          <a href="#experiencia" className="hover:text-zinc-100 transition-colors">
+          <a href="#experiencia" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Experiência
           </a>
-          <a href="#projetos" className="hover:text-zinc-100 transition-colors">
+          <a href="#projetos" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Projetos
           </a>
-          <a href="#contato" className="hover:text-zinc-100 transition-colors">
+          <a href="#contato" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Contato
           </a>
         </nav>
@@ -54,7 +54,7 @@ export const Navbar = () => {
             href="https://github.com/fabiobrizotti"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-1.5 text-zinc-400 hover:text-white transition-colors rounded-md hover:bg-white/5"
+            className="p-1.5 text-zinc-400 hover:text-white transition-colors duration-300 ease-in-out rounded-md hover:bg-white/5"
             aria-label="GitHub"
           >
             <Github className="w-4 h-4" />
@@ -63,14 +63,14 @@ export const Navbar = () => {
             href="https://www.linkedin.com/in/fabiobrizotti/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-1.5 text-zinc-400 hover:text-white transition-colors rounded-md hover:bg-white/5"
+            className="p-1.5 text-zinc-400 hover:text-white transition-colors duration-300 ease-in-out rounded-md hover:bg-white/5"
             aria-label="LinkedIn"
           >
             <Linkedin className="w-4 h-4" />
           </a>
           <a
             href="mailto:fabio.brizottilab@gmail.com"
-            className="p-1.5 text-zinc-400 hover:text-white transition-colors rounded-md hover:bg-white/5"
+            className="p-1.5 text-zinc-400 hover:text-white transition-colors duration-300 ease-in-out rounded-md hover:bg-white/5"
             aria-label="Email"
           >
             <Mail className="w-4 h-4" />
