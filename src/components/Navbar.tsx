@@ -44,6 +44,9 @@ export const Navbar = () => {
           <a href="#projetos" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Projetos
           </a>
+          <Link href="/blog" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
+            Blog
+          </Link>
           <a href="#contato" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Contato
           </a>
