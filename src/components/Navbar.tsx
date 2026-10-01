@@ -35,16 +35,19 @@ export const Navbar = () => {
         </Link>
 
         <nav className="hidden sm:flex items-center gap-6 text-xs font-medium text-zinc-400">
-          <a href="#sobre" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
+          <a href="/#sobre" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Sobre
           </a>
-          <a href="#experiencia" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
+          <a href="/#experiencia" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Experiência
           </a>
-          <a href="#projetos" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
+          <a href="/#projetos" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Projetos
           </a>
-          <a href="#contato" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
+          <Link href="/blog" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
+            Blog
+          </Link>
+          <a href="/#contato" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Contato
           </a>
         </nav>
