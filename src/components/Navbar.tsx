@@ -21,8 +21,15 @@ export const Navbar = () => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
     };
+    const onResize = () => {
+      if (window.innerWidth >= 640) setOpen(false);
+    };
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("resize", onResize);
+    };
   }, [open]);
 
   const closeMenu = () => setOpen(false);
@@ -47,21 +54,21 @@ export const Navbar = () => {
         </Link>
 
         <nav className="hidden sm:flex sm:order-2 items-center gap-6 text-xs font-medium text-zinc-400">
-          <a href="/#sobre" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
+          <Link href="/#sobre" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Sobre
-          </a>
-          <a href="/#experiencia" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
+          </Link>
+          <Link href="/#experiencia" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Experiência
-          </a>
-          <a href="/#projetos" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
+          </Link>
+          <Link href="/#projetos" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Projetos
-          </a>
+          </Link>
           <Link href="/blog" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Blog
           </Link>
-          <a href="/#contato" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
+          <Link href="/#contato" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Contato
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile hamburger (right) */}
@@ -107,27 +114,27 @@ export const Navbar = () => {
       {open && (
         <div className="sm:hidden border-t border-white/5 py-3 px-6 bg-[#090a0f]/80 backdrop-blur-md">
           <nav className="flex flex-col gap-3 text-xs font-medium text-zinc-400">
-            <a
+            <Link
               href="/#sobre"
               className="hover:text-zinc-100 transition-colors duration-300 ease-in-out"
               onClick={closeMenu}
             >
               Sobre
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#experiencia"
               className="hover:text-zinc-100 transition-colors duration-300 ease-in-out"
               onClick={closeMenu}
             >
               Experiência
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#projetos"
               className="hover:text-zinc-100 transition-colors duration-300 ease-in-out"
               onClick={closeMenu}
             >
               Projetos
-            </a>
+            </Link>
             <Link
               href="/blog"
               className="hover:text-zinc-100 transition-colors duration-300 ease-in-out"
@@ -135,13 +142,13 @@ export const Navbar = () => {
             >
               Blog
             </Link>
-            <a
+            <Link
               href="/#contato"
               className="hover:text-zinc-100 transition-colors duration-300 ease-in-out"
               onClick={closeMenu}
             >
               Contato
-            </a>
+            </Link>
           </nav>
         </div>
       )}

@@ -75,7 +75,9 @@ export default function AnneIaPost() {
     <div className="min-h-screen bg-[#090a0f] text-zinc-100 relative overflow-hidden">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
       />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-zinc-800/10 blur-[120px] pointer-events-none rounded-full" />
 
@@ -91,25 +93,25 @@ export default function AnneIaPost() {
 
         {/* Hero */}
         <div className="space-y-4">
-          <Rise>
+          <Rise instant>
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span>Anne IA</span>
             </div>
           </Rise>
-          <Rise delay={0.08}>
+          <Rise instant delay={0.08}>
             <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
               Anne IA: o fim do vácuo no WhatsApp
             </h1>
           </Rise>
-          <Rise delay={0.16}>
+          <Rise instant delay={0.16}>
             <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl">
               Cinco minutos sem resposta e o cliente já abriu o concorrente. A
               Anne responde na hora, com o tom da sua empresa, e segura a venda
               até o fim.
             </p>
           </Rise>
-          <Rise delay={0.24}>
+          <Rise instant delay={0.24}>
             <div className="flex flex-wrap gap-2 pt-1">
               {["WhatsApp", "n8n", "Evolution API", "Atendimento"].map((t) => (
                 <span

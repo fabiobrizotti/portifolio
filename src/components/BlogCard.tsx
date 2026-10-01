@@ -41,9 +41,9 @@ export function BlogCard({ href, badge, title, description, tags }: BlogCardProp
             <span className="size-1.5 rounded-full bg-emerald-400" />
             {badge}
           </Badge>
-          <CardTitle className="text-2xl font-semibold tracking-tight text-white pt-2">
+          <h2 className="text-2xl font-semibold tracking-tight text-white pt-2">
             {title}
-          </CardTitle>
+          </h2>
           <CardDescription className="text-sm text-zinc-300 leading-relaxed">
             {description}
           </CardDescription>

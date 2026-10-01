@@ -4,16 +4,29 @@ import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
 // Fade+rise suave (easing da marca). Respeita prefers-reduced-motion.
+// Hero usa `animate` (visível sem observer); seções usam `whileInView`.
 // ponytail: sem parallax em scrollY; upgrade é useScroll + transforms por seção.
 export function Rise({
   children,
   delay = 0,
+  instant = false,
 }: {
   children: ReactNode;
   delay?: number;
+  instant?: boolean;
 }) {
   const reduce = useReducedMotion();
   if (reduce) return <>{children}</>;
+  if (instant)
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+      >
+        {children}
+      </motion.div>
+    );
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
