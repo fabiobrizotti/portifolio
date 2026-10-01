@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,17 @@ export const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
+  const closeMenu = () => setOpen(false);
 
   return (
     <header
@@ -52,6 +64,16 @@ export const Navbar = () => {
           </a>
         </nav>
 
+        {/* Mobile hamburger */}
+        <button
+          className="sm:hidden p-1.5 text-zinc-400 hover:text-white transition-colors duration-300 ease-in-out rounded-md hover:bg-white/5"
+          aria-expanded={open}
+          aria-label={open ? "Fechar menu" : "Abrir menu"}
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
+
         <div className="flex items-center gap-3">
           <a
             href="https://github.com/fabiobrizotti"
@@ -80,6 +102,49 @@ export const Navbar = () => {
           </a>
         </div>
       </div>
+
+      {/* Mobile dropdown */}
+      {open && (
+        <div className="sm:hidden border-t border-white/5 py-3 px-6 bg-[#090a0f]/80 backdrop-blur-md">
+          <nav className="flex flex-col gap-3 text-xs font-medium text-zinc-400">
+            <a
+              href="/#sobre"
+              className="hover:text-zinc-100 transition-colors duration-300 ease-in-out"
+              onClick={closeMenu}
+            >
+              Sobre
+            </a>
+            <a
+              href="/#experiencia"
+              className="hover:text-zinc-100 transition-colors duration-300 ease-in-out"
+              onClick={closeMenu}
+            >
+              Experiência
+            </a>
+            <a
+              href="/#projetos"
+              className="hover:text-zinc-100 transition-colors duration-300 ease-in-out"
+              onClick={closeMenu}
+            >
+              Projetos
+            </a>
+            <Link
+              href="/blog"
+              className="hover:text-zinc-100 transition-colors duration-300 ease-in-out"
+              onClick={closeMenu}
+            >
+              Blog
+            </Link>
+            <a
+              href="/#contato"
+              className="hover:text-zinc-100 transition-colors duration-300 ease-in-out"
+              onClick={closeMenu}
+            >
+              Contato
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
