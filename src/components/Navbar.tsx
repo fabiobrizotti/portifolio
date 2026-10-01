@@ -38,7 +38,7 @@ export const Navbar = () => {
       <div className="max-w-4xl mx-auto px-6 flex items-center justify-between">
         <Link
           href="/"
-          className="flex items-center gap-2 group text-sm font-medium tracking-tight text-zinc-200 hover:text-white transition-colors"
+          className="order-1 flex items-center gap-2 group text-sm font-medium tracking-tight text-zinc-200 hover:text-white transition-colors"
         >
           {/* Subtle pixel status dot */}
           <span className="w-2 h-2 rounded-[1px] bg-emerald-500 inline-block shadow-[0_0_8px_rgba(16,185,129,0.4)]" />
@@ -46,7 +46,7 @@ export const Navbar = () => {
           <span className="text-xs text-zinc-400 font-mono">/dev</span>
         </Link>
 
-        <nav className="hidden sm:flex items-center gap-6 text-xs font-medium text-zinc-400">
+        <nav className="hidden sm:flex sm:order-2 items-center gap-6 text-xs font-medium text-zinc-400">
           <a href="/#sobre" className="hover:text-zinc-100 transition-colors duration-300 ease-in-out">
             Sobre
           </a>
@@ -64,9 +64,9 @@ export const Navbar = () => {
           </a>
         </nav>
 
-        {/* Mobile hamburger */}
+        {/* Mobile hamburger (right) */}
         <button
-          className="sm:hidden p-1.5 text-zinc-400 hover:text-white transition-colors duration-300 ease-in-out rounded-md hover:bg-white/5"
+          className="order-3 sm:hidden p-1.5 text-zinc-400 hover:text-white transition-colors duration-300 ease-in-out rounded-md hover:bg-white/5"
           aria-expanded={open}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           onClick={() => setOpen(!open)}
@@ -74,7 +74,7 @@ export const Navbar = () => {
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
 
-        <div className="flex items-center gap-3">
+        <div className="order-2 mx-auto flex items-center gap-3 sm:order-3 sm:mx-0">
           <a
             href="https://github.com/fabiobrizotti"
             target="_blank"
