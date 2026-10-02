@@ -12,6 +12,9 @@ import {
   Store,
   BrainCircuit,
   Send,
+  PackageCheck,
+  Smartphone,
+  MessageCircle,
   ArrowDown,
   type LucideIcon,
 } from "lucide-react";
@@ -150,9 +153,48 @@ const steps: Step[] = [
       "Essa separação protege a operação da loja. Em vários momentos do dia, o WhatsApp ou a conexão de internet podem oscilar por alguns segundos. Se o sistema dependesse da confirmação imediata de entrega para continuar trabalhando, ele travaria e deixaria os outros clientes esperando. Ao depositar a resposta nessa esteira de saída, a Anne conclui a tarefa dela e fica livre para atender a próxima pessoa da fila, enquanto o recado segue com segurança para o ajuste visual final, chegando organizado e fácil de ler no celular do cliente.",
     ],
   },
+  {
+    id: "retirada-segura",
+    title: "Retira o recado com segurança",
+    icon: PackageCheck,
+    color: "text-emerald-400",
+    badge: "Entrega garantida",
+    text: [
+      "Na terceira fase, o objetivo é cuidar da forma como o cliente recebe e enxerga a resposta na tela do celular. Em vez de despejar um bloco denso de texto de uma vez só, o fluxo organiza o conteúdo para fatiar as frases e simular o ritmo de uma pessoa de verdade conversando no WhatsApp.",
+      "O processo começa retirando o recado da esteira de saída com total segurança. O sistema só dá baixa na mensagem depois que a etapa seguinte é concluída com sucesso. Se a internet oscilar ou o aplicativo passar por alguma instabilidade passageira, o recado não se perde pelo caminho, permanecendo guardado para uma nova tentativa automática assim que o sinal voltar ao normal. Em seguida, o fluxo organiza a ficha de envio, separando o texto formulado pela Anne, o nome do cliente e o telefone de destino.",
+      "Essa preparação do texto acontece de forma autônoma, sem exigir que o dono da empresa ajuste configurações manualmente na rotina diária. As orientações de como a mensagem deve ser tratada já ficam prontas, garantindo que o acabamento siga o padrão do negócio de maneira padronizada.",
+    ],
+  },
+  {
+    id: "fatia-visual",
+    title: "Fatia a resposta para o celular",
+    icon: Smartphone,
+    color: "text-cyan-400",
+    badge: "Leitura fácil",
+    text: [
+      "Receber parágrafos longos no WhatsApp cansa quem está lendo e dificulta a visualização na tela pequena do aparelho. Por isso, essa etapa atua como uma edição visual focada em smartphones. O conteúdo é dividido em pequenas frases de uma ou duas linhas. Quando a resposta traz preços ou detalhes importantes de produtos, esses valores ficam em linhas isoladas para o cliente bater o olho e entender tudo sem esforço. Toda essa divisão mantém fidelidade ao sentido original da conversa, gerando uma sequência ordenada de frases curtas.",
+    ],
+  },
+  {
+    id: "entrega-ritmada",
+    title: "Entrega no ritmo humano",
+    icon: MessageCircle,
+    color: "text-violet-400",
+    badge: "Anti-bloqueio",
+    text: [
+      "Com as frases preparadas, chega o momento da entrega no aplicativo. O sistema primeiro confirma a leitura da mensagem do cliente, ativando o sinal de mensagem lida. Logo depois, entra o cuidado com o ritmo. Robôs comuns costumam responder em frações de segundo, o que denuncia na hora o uso de automação mecânica e chama a atenção dos filtros do WhatsApp, elevando o risco de bloqueio da linha por disparo de spam.",
+      "Para evitar esse problema, a Anne utiliza pausas antes de soltar cada mensagem. O sistema calcula intervalos variáveis dentro de uma faixa ajustável, como pausas entre 2 e 10 segundos, alternando o aviso de digitando na tela do cliente. Ele entrega a primeira frase, mantém o status de digitando por alguns instantes e só então envia o trecho seguinte. Quando todas as frases são entregues, o atendimento se encerra de forma fluida. O cliente recebe respostas fáceis de ler, com o ritmo acolhedor de uma conversa humana, e a linha da empresa fica protegida contra bloqueios do WhatsApp.",
+    ],
+  },
 ];
 
-export function FlowTransition() {
+export function FlowTransition({
+  line1 = "Gostou dessa primeira parte? Ela é a mais simples do workflow.",
+  line2 = "A partir daqui entramos nos conceitos mais técnicos — e mais divertidos. Siga a seta para continuar.",
+}: {
+  line1?: string;
+  line2?: string;
+}) {
   return (
     <li className="relative flex gap-4 sm:gap-5 pb-8 list-none">
       <div className="relative z-10 flex flex-col items-center shrink-0 w-14">
@@ -163,13 +205,8 @@ export function FlowTransition() {
       <div className="flex-1 min-w-0">
         <Rise>
           <div className="p-4 sm:p-5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 space-y-2">
-            <p className="text-sm text-zinc-200 leading-relaxed">
-              Gostou dessa primeira parte? Ela é a mais simples do workflow.
-            </p>
-            <p className="text-sm text-zinc-400 leading-relaxed">
-              A partir daqui entramos nos conceitos mais técnicos — e mais
-              divertidos. Siga a seta para continuar.
-            </p>
+            <p className="text-sm text-zinc-200 leading-relaxed">{line1}</p>
+            <p className="text-sm text-zinc-400 leading-relaxed">{line2}</p>
           </div>
         </Rise>
       </div>
@@ -214,7 +251,8 @@ function StepItem({ s, i }: { s: Step; i: number }) {
   );
 }
 
-const CUT = 5;
+const CUT1 = 5;
+const CUT2 = 10;
 
 export function WorkflowNodes() {
   return (
@@ -224,12 +262,19 @@ export function WorkflowNodes() {
         aria-hidden
         className="absolute left-[27px] top-4 bottom-4 w-px bg-gradient-to-b from-zinc-700 via-zinc-800 to-transparent"
       />
-      {steps.slice(0, CUT).map((s, i) => (
+      {steps.slice(0, CUT1).map((s, i) => (
         <StepItem key={s.id} s={s} i={i} />
       ))}
       <FlowTransition />
-      {steps.slice(CUT).map((s, k) => (
-        <StepItem key={s.id} s={s} i={CUT + k} />
+      {steps.slice(CUT1, CUT2).map((s, k) => (
+        <StepItem key={s.id} s={s} i={CUT1 + k} />
+      ))}
+      <FlowTransition
+        line1="E a resposta, como chega no celular do cliente?"
+        line2="A última fase fatia o texto e entrega no ritmo de uma conversa humana. Siga a seta."
+      />
+      {steps.slice(CUT2).map((s, k) => (
+        <StepItem key={s.id} s={s} i={CUT2 + k} />
       ))}
     </ol>
   );

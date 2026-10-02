@@ -18,6 +18,9 @@ const stepNames = [
   "Assume a identidade da empresa",
   "O cérebro e as ferramentas",
   "Despacho e fila de saída",
+  "Retira o recado com segurança",
+  "Fatia a resposta para o celular",
+  "Entrega no ritmo humano",
 ];
 
 export const metadata = {
