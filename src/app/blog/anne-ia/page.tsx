@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, MessageCircle, Settings2, Database, Users } from "lucide-react";
+import { ArrowLeft, ArrowRight, MessageCircle, Settings2, Database, Users } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Rise } from "./motion";
 
@@ -270,6 +270,25 @@ export default function AnneIaPost() {
             respondendo com os dados do seu negócio e passando para a equipe
             quando o assunto aperta.
           </p>
+        </section>
+        </Rise>
+
+        {/* CTA fluxo */}
+        <Rise>
+        <section className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-6 sm:p-8 space-y-3">
+          <h3 className="text-xl font-medium text-white tracking-tight">
+            Quer ver como funciona por dentro?
+          </h3>
+          <p className="text-sm text-zinc-300 leading-relaxed">
+            Da mensagem que chega até a resposta na hora: o passo a passo
+            visual do atendimento da Anne.
+          </p>
+          <Link
+            href="/blog/anne-ia/workflow"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500 text-zinc-950 hover:bg-emerald-400 transition-colors"
+          >
+            Ver o fluxo de atendimento <ArrowRight className="w-4 h-4" />
+          </Link>
         </section>
         </Rise>
       </main>
