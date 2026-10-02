@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import {
   MessageSquare,
   ShieldAlert,
@@ -214,9 +215,28 @@ export function FlowTransition({
   );
 }
 
-function StepItem({ s, i }: { s: Step; i: number }) {
+// Foco por distância do node ativo: vizinho a 75%, resto a 45%.
+// ponytail: 3 níveis fixos; upgrade é interpolar contínuo via scrollY.
+const DIM_OPACITY = [1, 0.75, 0.45] as const;
+
+function StepItem({
+  s,
+  i,
+  dim,
+}: {
+  s: Step;
+  i: number;
+  dim: 0 | 1 | 2;
+}) {
+  const focused = dim === 0;
+  const opacity = DIM_OPACITY[dim];
+
   return (
-    <li key={s.id} className="relative flex gap-4 sm:gap-5 pb-8 last:pb-0">
+    <li
+      data-idx={i}
+      className="relative flex gap-4 sm:gap-5 pb-8 last:pb-0"
+      style={{ opacity, transition: "opacity 500ms ease" }}
+    >
       {/* marcador numerado */}
       <div className="relative z-10 flex flex-col items-center shrink-0">
         <span className="flex items-center justify-center w-14 h-14 rounded-2xl bg-zinc-950 border border-zinc-800/80">
@@ -230,8 +250,15 @@ function StepItem({ s, i }: { s: Step; i: number }) {
       <Rise delay={0.05 * (i % 5)}>
         <motion.div
           whileHover={{ y: -2 }}
+          animate={{ scale: focused ? 1.04 : 1 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
-          className="p-4 sm:p-5 rounded-xl bg-zinc-950/60 border border-zinc-800/60 space-y-2.5"
+          className="p-4 sm:p-5 rounded-xl border space-y-2.5"
+          style={{
+            transformOrigin: "top left",
+            backgroundColor: focused ? "transparent" : "rgba(9, 9, 11, 0.6)",
+            borderColor: focused ? "transparent" : "rgba(39, 39, 42, 0.6)",
+            transition: "background-color 500ms ease, border-color 500ms ease",
+          }}
         >
           <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-mono bg-zinc-800/50 border border-zinc-700/50 text-zinc-300">
             {s.badge}
@@ -254,28 +281,70 @@ function StepItem({ s, i }: { s: Step; i: number }) {
 const CUT1 = 5;
 const CUT2 = 10;
 
+function calcDim(activeIdx: number, i: number, reduced: boolean): 0 | 1 | 2 {
+  if (reduced) return 0;
+  const d = Math.abs(i - activeIdx);
+  if (d === 0) return 0;
+  if (d === 1) return 1;
+  return 2;
+}
+
 export function WorkflowNodes() {
+  const olRef = useRef<HTMLOListElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const reduced = useReducedMotion();
+
+  // O node que cruza o centro da tela vira o ativo
+  useEffect(() => {
+    if (reduced) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = Number((entry.target as HTMLElement).dataset.idx);
+            if (!Number.isNaN(idx)) setActiveIndex(idx);
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    );
+    olRef.current
+      ?.querySelectorAll("[data-idx]")
+      .forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [reduced]);
+
+  let stepCount = 0;
+  const next = () => {
+    const i = stepCount;
+    stepCount += 1;
+    return i;
+  };
+
   return (
-    <ol className="relative space-y-0">
+    <ol ref={olRef} className="relative space-y-0">
       {/* conector vertical central */}
       <div
         aria-hidden
         className="absolute left-[27px] top-4 bottom-4 w-px bg-gradient-to-b from-zinc-700 via-zinc-800 to-transparent"
       />
-      {steps.slice(0, CUT1).map((s, i) => (
-        <StepItem key={s.id} s={s} i={i} />
-      ))}
+      {steps.slice(0, CUT1).map((s) => {
+        const i = next();
+        return <StepItem key={s.id} s={s} i={i} dim={calcDim(activeIndex, i, !!reduced)} />;
+      })}
       <FlowTransition />
-      {steps.slice(CUT1, CUT2).map((s, k) => (
-        <StepItem key={s.id} s={s} i={CUT1 + k} />
-      ))}
+      {steps.slice(CUT1, CUT2).map((s) => {
+        const i = next();
+        return <StepItem key={s.id} s={s} i={i} dim={calcDim(activeIndex, i, !!reduced)} />;
+      })}
       <FlowTransition
         line1="E a resposta, como chega no celular do cliente?"
         line2="A última fase fatia o texto e entrega no ritmo de uma conversa humana. Siga a seta."
       />
-      {steps.slice(CUT2).map((s, k) => (
-        <StepItem key={s.id} s={s} i={CUT2 + k} />
-      ))}
+      {steps.slice(CUT2).map((s) => {
+        const i = next();
+        return <StepItem key={s.id} s={s} i={i} dim={calcDim(activeIndex, i, !!reduced)} />;
+      })}
     </ol>
   );
 }
