@@ -20,5 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: "https://fabiobrizotti.vercel.app/blog/anne-ia/workflow",
+      lastModified: new Date("2026-10-02"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ];
 }
