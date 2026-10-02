@@ -13,6 +13,11 @@ const stepNames = [
   "Pausa para atendimento humano",
   "Separação de texto, imagem e áudio",
   "Fila organizada de mensagens",
+  "Junta as mensagens antes de responder",
+  "Última checagem antes de responder",
+  "Assume a identidade da empresa",
+  "O cérebro e as ferramentas",
+  "Despacho e fila de saída",
 ];
 
 export const metadata = {
